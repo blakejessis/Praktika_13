@@ -4,32 +4,23 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Stream;
-
-
 public class Main
 {
     private static String staffFile = "data/staff.txt";
     private static String dateFormat = "dd.MM.yyyy";
-
     public static void main(String[] args)
     {
         ArrayList<Employee> staff = loadStaffFromFile();
-
         staff.forEach(System.out::println);
-
         staff.sort((o1, o2) -> {
             return o1.getName().compareTo(o2.getName()) +
                     o1.getSalary().compareTo(o2.getSalary());
-
-
     });
-
         System.out.println();
         System.out.println();
         System.out.println();
         staff.forEach(System.out::println);
     }
-
     private static ArrayList<Employee> loadStaffFromFile()
     {
         ArrayList<Employee> staff = new ArrayList<>();
